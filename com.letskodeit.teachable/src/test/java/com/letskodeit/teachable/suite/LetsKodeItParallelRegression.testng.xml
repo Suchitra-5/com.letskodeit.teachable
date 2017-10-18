@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LetsKodeItParallelRegression" verbose="10" thread-count="5" parallel="tests"> <!-- 5 threads and 5 classes -->
+
+  <test name="LetKodeItSelects">
+   <groups>
+      <run>
+      <include name="selects" />
+      </run>
+   </groups>
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeSelects">
+		</class>
+    </classes>
+  </test> <!-- LetsKodeItSelects -->
+
+  <test name="LetKodeItTable">
+   <groups>
+      <run>
+      <include name="table" />
+      </run>
+   </groups>
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeitTable">
+		</class>
+    </classes>
+  </test> <!-- LetsKodeItTable -->
+  
+  <test name="LetKodeItSwitches">
+   <groups>
+      <run>
+      <include name="switches" />
+      </run>
+   </groups>
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeItSwitch">
+		</class>
+    </classes>
+  </test> <!-- LetsKodeItSwitches -->
+  
+  <test name="LetKodeItActions">
+   <groups>
+      <run>
+      <include name="actions" />
+      </run>
+   </groups>
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeItMouse">
+	 </class>
+    </classes>
+  </test> <!-- LetsKodeItActions -->
+
+  <test name="LetKodeItFrame">
+   <groups>
+      <run>
+      <include name="frame" />
+      </run>
+   </groups>
+    <classes>
+      	<class name="com.letskodeit.teachable.tests.LetsKodeItFrame">
+		</class>
+    </classes>
+  </test> <!-- LetsKodeItFrame -->
+
+</suite> <!-- LetsKodeItParallelRegression -->

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LetsKodeItRegression" verbose="8" thread-count="5" parallel="false"> <!-- 5 threads and 5 classes -->
+
+  <test name="LetKodeItSelects">
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeSelects"/>
+    </classes>
+  </test> <!-- LetsKodeItSelects -->
+
+  <test name="LetKodeItTable">
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeitTable"/>
+    </classes>
+  </test> <!-- LetsKodeItTable -->
+  
+  <test name="LetKodeItSwitches">
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeItSwitch"/>
+    </classes>
+  </test> <!-- LetsKodeItSwitches -->
+  
+  <test name="LetKodeItActions">
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeItMouse"/>
+    </classes>
+  </test> <!-- LetsKodeItActions -->
+
+  <test name="LetKodeItFrame">
+    <classes>
+      <class name="com.letskodeit.teachable.tests.LetsKodeItFrame"/>
+    </classes>
+  </test> <!-- LetsKodeItFrame -->
+
+</suite> <!-- LetsKodeItParallelRegression -->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LetsKodeItGroups" verbose="8" thread-count="5"
+	parallel="false"> <!-- 5 threads and 5 classes -->
+	<test name="LetKodeItSelectsAndFrame">
+		<groups>
+			<run>
+				<include name="selects" />
+				<include name="frame" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.letskodeit.teachable.tests.LetsKodeSelects" />
+			<class name="com.letskodeit.teachable.tests.LetsKodeItFrame" />
+		</classes>
+	</test> <!-- LetsKodeItSelectsAndFrame -->
+</suite> <!-- LetsKodeItGroups -->
