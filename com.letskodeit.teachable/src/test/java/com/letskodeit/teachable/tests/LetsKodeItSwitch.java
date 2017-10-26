@@ -17,10 +17,10 @@ public class LetsKodeItSwitch extends LetsKodeItPracticeBase {
 		LetsKodeItSelectsPage LKSeP = new LetsKodeItSelectsPage(driver);
 		
 		LKSP.openWindowButton().click(); // Open a new window
-		LKSP.switchToURL("https://letskodeit.teachable.com/courses"); // Switch to the new window
+		LKSP.switchToURL("http://letskodeit.teachable.com/courses"); // Switch to the new window
 		UtilKit.suspendAction(3000);
 		driver.manage().window().maximize();
-		Assert.assertTrue(LKSP.verifyNewWindowURL("https://letskodeit.teachable.com/courses"), "Switch FAILED");
+		Assert.assertTrue(LKSP.verifyNewWindowURL("http://letskodeit.teachable.com/courses"), "Switch FAILED");
 		LKSP.searchTextbox().sendKeys("selenium");
 		UtilKit.suspendAction(5000);
 		driver.close(); // Close the new window
@@ -33,8 +33,8 @@ public class LetsKodeItSwitch extends LetsKodeItPracticeBase {
 		 * The next block  does a switch between the windows twice
 		 */
 		LKSP.openWindowButton().click(); 
-		LKSP.switchToURL("https://letskodeit.teachable.com/courses");
-		Assert.assertTrue(LKSP.verifyNewWindowURL("https://letskodeit.teachable.com/courses"), "Switch FAILED");
+		LKSP.switchToURL("http://letskodeit.teachable.com/courses");
+		Assert.assertTrue(LKSP.verifyNewWindowURL("http://letskodeit.teachable.com/courses"), "Switch FAILED");
 		driver.manage().window().maximize();
 		LKSP.searchTextbox().sendKeys("selenium");
 		UtilKit.suspendAction(5000);
@@ -46,8 +46,8 @@ public class LetsKodeItSwitch extends LetsKodeItPracticeBase {
 		UtilKit.suspendAction(5000);
 
 		// Again the same
-		LKSP.switchToURL("https://letskodeit.teachable.com/courses");
-		Assert.assertTrue(LKSP.verifyNewWindowURL("https://letskodeit.teachable.com/courses"), "Switch FAILED");
+		LKSP.switchToURL("http://letskodeit.teachable.com/courses");
+		Assert.assertTrue(LKSP.verifyNewWindowURL("http://letskodeit.teachable.com/courses"), "Switch FAILED");
 		driver.manage().window().maximize();
 		UtilKit.suspendAction(5000);
 		

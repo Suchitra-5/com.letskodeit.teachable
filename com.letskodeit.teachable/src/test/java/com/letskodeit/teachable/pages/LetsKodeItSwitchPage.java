@@ -107,6 +107,8 @@ public class LetsKodeItSwitchPage {
 				return;
 			}
 		}
+		UtilKit.logger.error("Switch to " + inURL + "Window was Never Completed...");
+
 	}
 
 	
