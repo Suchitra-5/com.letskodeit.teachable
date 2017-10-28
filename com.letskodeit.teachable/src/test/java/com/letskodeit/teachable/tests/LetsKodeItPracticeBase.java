@@ -28,6 +28,7 @@ public class LetsKodeItPracticeBase {
 		if(!browser.isEmpty())
 			myBrowser = browser;
 		driver = UtilKit.initTest(project, application, myBrowser, thisClassName);
+		System.out.println("Initialization completed");
 		
 	}
 	
