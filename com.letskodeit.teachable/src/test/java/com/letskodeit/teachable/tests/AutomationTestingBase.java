@@ -11,13 +11,13 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.internal.TestResult;
 
-import com.letskodeit.teachable.util.UtilKit;
+import Util.UtilKit;
 
 public class AutomationTestingBase {
 	
 	WebDriver driver = null;
-	String project = "com.letskideit.com";
-	String application = "automationtesting";
+	String project = "com.letskodeit.teachable";
+	String application = project;
 	String browser = "firefox";
 	String className = this.getClass().getName();
 
@@ -31,7 +31,7 @@ public class AutomationTestingBase {
 	
 	@BeforeMethod(groups = {"gred"})
 		public void startMethod(Method method){
-			UtilKit.initMethod(method.getName());
+			UtilKit.initMethod(method);
 	}
 	
 	@AfterMethod(groups = {"grid"})

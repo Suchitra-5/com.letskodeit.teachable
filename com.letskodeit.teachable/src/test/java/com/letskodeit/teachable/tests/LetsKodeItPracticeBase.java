@@ -1,6 +1,6 @@
 package com.letskodeit.teachable.tests;
 
-import com.letskodeit.teachable.util.UtilKit;
+import Util.UtilKit;
 
 import java.lang.reflect.Method;
 
@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.internal.TestResult;
 
 public class LetsKodeItPracticeBase {
 	public WebDriver driver;
@@ -34,7 +35,7 @@ public class LetsKodeItPracticeBase {
 	
 	@BeforeMethod(groups = {"selects","table","switches","actions","frame"})
 	public void startMethod(Method method) {
-		UtilKit.initMethod(method.getName());
+		UtilKit.initMethod(method);
 	}
 	
 	@AfterMethod(groups = {"selects","table","switches","actions","frame"})

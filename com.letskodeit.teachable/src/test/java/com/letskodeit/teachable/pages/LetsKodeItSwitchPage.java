@@ -8,7 +8,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.letskodeit.teachable.util.UtilKit;
+import Util.UtilKit;
 
 public class LetsKodeItSwitchPage {
 	

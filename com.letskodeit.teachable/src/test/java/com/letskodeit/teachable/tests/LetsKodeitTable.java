@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.letskodeit.teachable.pages.LetsKodeItTablePage;
-import com.letskodeit.teachable.util.UtilKit;
+import Util.UtilKit;
 
 public class LetsKodeitTable extends LetsKodeItPracticeBase {
 	
