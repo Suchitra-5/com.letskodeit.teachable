@@ -1,19 +1,28 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-<!-- Setsup the Adactin Test -->
+	<!-- Setsup the Lestkodeit Test -->
 	<!-- For more details: -->
 	<!-- See the Super POM in $M2_HOME\lib\maven-model-builder-3.3.9.jar\org\apache\maven\model\ -->
 	<!-- testSourceDirectory is set to ${project.basedir}/src/test/java -->
-	
- 	<modelVersion>4.0.0</modelVersion>
- 	<groupId>com.letskodeit.teachable.tests</groupId>
- 	<artifactId>com.letskodeit.teachable</artifactId>
- 	<version>0.0.1-SNAPSHOT</version>
- 	<name>letskodeit</name>
-  	<description>teachable</description>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.letskodeit.teachable.tests</groupId>
+	<artifactId>com.letskodeit.teachable</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>letskodeit</name>
+	<description>teachable</description>
 	<packaging>jar</packaging>
 	<url>http://maven.apache.org</url>
+
+	<developers>
+		<developer>
+			<id>efrain</id>
+			<name>Efrain Sanchez</name>
+			<email>efrain583@yahoo.com</email>
+		</developer>
+	</developers>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,12 +39,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<version>2.19.1</version>
+						<version>2.20.1</version>
 						<configuration>
 							<!-- specify the Testng Suite XML file here -->
 							<suiteXmlFiles>
 								<suiteXmlFile>${letskodeitRegressionTestsuiteFile}</suiteXmlFile>
 							</suiteXmlFiles>
+							<!-- Do not stop testing if a failure is encountered -->
+							<testFailureIgnore>true</testFailureIgnore>
+							<generateSitemap>true</generateSitemap> <!-- To disable this from the command Line use -DGenerateSitemap=false -->
+							<generateReports>true</generateReports> <!-- To disable this from the command Line use -DGenerateReports=false -->
 						</configuration>
 					</plugin>
 				</plugins>
@@ -43,7 +56,41 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		</profile>
 	</profiles>
 
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<!-- Creates a nicely formatted Surefire Test Report in html format -->
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.20.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<!-- Maven JXR plugin To Cross Reference the line number of the source 
+					code that caused a test to the fail. -->
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.5</version>
+				<reportSets>
+					<reportSet>
+						<id>aggregate</id>
+						<reports>
+							<report>aggregate</report>
+							<report>test-aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jxr-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jxr-plugin</artifactId>
+			<version>2.3</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
